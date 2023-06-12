@@ -4,13 +4,16 @@ import matplotlib.pyplot as plt
 from nltk import FreqDist
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
-
 import nltk
+from dotenv import load_dotenv
+
+load_dotenv()
+
 nltk.download('punkt')
 nltk.download('stopwords')
 
 # Specify the path to the Writings directory
-directory = '/Users/williamgay/iCloud/Writings'
+directory = os.getenv('WRITINGS_PATH')
 
 # Retrieve all the files in the directory
 files = os.listdir(directory)
